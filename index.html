@@ -90,7 +90,8 @@
                             INPM.<br /><br />
                             O uso de máscaras será obrigatório, sendo permitida retirada apenas para alimentação no
                             refeitório. Recomendamos que você compartilhe a mesma mesa no refeitório com pessoas que
-                            façam parte do seu convívio. A comida será servida em self-service e todos serão instruídos a
+                            façam parte do seu convívio. A comida será servida em self-service e todos serão instruídos
+                            a
                             passarem ácool nas mãos, usar luvas descartáveis, a evitar filas, aglomereações ou conversar
                             enquanto estiverem se servindo.
                         </div>
@@ -203,6 +204,16 @@
                     </div>
                 </span>
             </div>
+
+            <div class="currdate">Atualizado em {{currDate.toLocaleString()}}</div>
+
+            <div class="alert" :class="{'show': alert.show, [alert.type]: true}">
+                <span style="display: block">{{alert.text}}</span>
+                <a v-if="!loading" class="act-link" href="javascript:void(0)" @click="dismissAlert()">Ok</a>
+                <div v-if="loading" style="padding-top: 4px">
+                    <img src="./three-dots.svg" style="height: 10px" />
+                </div>
+            </div>
         </div>
 
         <div class="presentation" :class="{'show': !invitationOpened}">
@@ -210,14 +221,6 @@
                 Olá, {{tag || 'Convidado'}}!
                 <a v-if="!loading" class="act-link block-link" href="javascript:void(0)" @click="openInvitation()">Abrir
                     convite!</a>
-            </div>
-        </div>
-
-        <div class="alert" :class="{'show': alert.show, [alert.type]: true}">
-            <span style="display: block">{{alert.text}}</span>
-            <a v-if="!loading" class="act-link" href="javascript:void(0)" @click="dismissAlert()">Ok</a>
-            <div v-if="loading" style="padding-top: 4px">
-                <img src="./three-dots.svg" style="height: 10px" />
             </div>
         </div>
 

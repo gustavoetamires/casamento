@@ -37,7 +37,8 @@
             },
             timeout: null,
             music: document.getElementById('music'),
-            musicMuted: false
+            musicMuted: false,
+            currDate: new Date()
         },
         created: async function () {
             const self = this;
