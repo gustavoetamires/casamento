@@ -12,7 +12,7 @@
     transition-timing-function: ease-in;
     transition: 0.2s;
     transform: translateY(130%);
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 .alert.info {

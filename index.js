@@ -8,7 +8,7 @@
         'Content-Type': 'application/json'
     };
 
-    const app = new Vue({
+    new Vue({
         el: '.app',
         data: {
             initialized: false,
