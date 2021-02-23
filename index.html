@@ -59,7 +59,7 @@
                         @click="showCompleteAddress = !showCompleteAddress">Ver o endereço completo <i
                             class="far fa-eye"></i></a>
                     <transition name="slide-fade">
-                        <div v-if="showCompleteAddress" class="block-link-info">
+                        <div v-if="showCompleteAddress" class="block-link-info justify">
                             Av. Maria Cândida Delgado, 390 - Vila Cândida, São José dos Campos - SP, 12213-513
                         </div>
                     </transition>
@@ -78,7 +78,7 @@
                     <a class="act-link block-link" target="_blank"
                         href="https://www.waze.com/live-map/directions/brasil/sao-paulo/av.-maria-candida-delgado,-390?navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_directions&to=place.ChIJYS5uwtZJzJQR0uyimpAIU-8">
                         Abrir no Waze <i class="fab fa-waze"></i></a>
-                    <a class="act-link block-link" href="javascript:void(0)" :class="{'active': showMap}"
+                    <a class="act-link block-link" href="javascript:void(0)" :class="{'active': showInfos}"
                         @click="showInfos = !showInfos">Covid-19 <i class="fas fa-virus"></i></a>
                     <transition name="slide-fade">
                         <div v-if="showInfos" class="block-link-info justify">
@@ -92,7 +92,7 @@
                             refeitório. Recomendamos que você compartilhe a mesma mesa no refeitório com pessoas que
                             façam parte do seu convívio. A comida será servida em self-service e todos serão instruídos
                             a
-                            passarem ácool nas mãos, usar luvas descartáveis, a evitar filas, aglomereações ou conversar
+                            passarem álcool nas mãos, usar luvas descartáveis, a evitar filas, aglomereações ou conversar
                             enquanto estiverem se servindo.
                         </div>
                     </transition>
@@ -108,7 +108,7 @@
                     contigo
                     também.
                     As pessoas que você incluir aqui com você não precisarão realizar a inscrição.<br /><br />
-                    Para confirmar a presença, preencha os campos abaixo e clique em <strong>Confirmar</strong>.
+                    Para confirmar a presença, preencha os campos abaixo e clique em <strong>Confirmar</strong>.<br /><br />
                     <div class="person-card">
                         <span class="card-title">Meus dados</span>
                         <div class="field" :class="{'focus': focusField == 'name'}">
