@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+* {
+    font-family: 'Comfortaa', cursive;
+}
+
+body {
+    background-color: #DFA8AB;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.app {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    visibility: hidden;
+}
+
+.app.loading input,
+.app.loading textarea,
+.app.loading a {
+    pointer-events: none;
+}
+
+.app.show {
+    visibility: visible;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.parents-names {
+    font-size: 0.65em;
+    width: calc(50%);
+}
+
+.parent-name {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.parents-names.left {
+    float: left;
+    text-align: left;
+}
+
+.parents-names.right {
+    float: right;
+    text-align: right;
+}
+
+.couple-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4em;
+    margin-top: 90px;
+}
+
+.info {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.info.date {
+    font-size: 1.5em;
+    padding-bottom: 20px;
+}
+
+.info.date .emphasis {
+    font-weight: bold;
+}
+
+.section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.section-divider {
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #d8a3a6;
+}
+
+.section .section-icon {
+    font-size: 3em;
+    display: block;
+}
+
+.section .section-title {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.block-link::before {
+    content: ' ';
+    display: block;
+    height: 10px;
+}
+
+.act-link {
+    font-size: 0.8em;
+    margin: 4px 0 4px 0;
+    text-decoration: none;
+    color: #f2db86;
+    line-height: 15px;
+    width: auto;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #f2db86;
+    transition: color .3s, border-bottom-color .3s;
+}
+
+.act-link.inline::before {
+    display: none;
+}
+
+.act-link:hover,
+.act-link.active {
+    color: #ffc7ca;
+    border-bottom-color: #ffc7ca;
+}
+
+.block-link-info {
+    padding: 25px 0 15px 0;
+}
+
+.person-card {
+    padding: 10px 20px 20px 20px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    background-color: #d1999c;
+    margin-top: 15px;
+}
+
+.person-card .card-title {
+    font-size: .8em;
+    color: #ffc7ca;
+}
+
+.remove-person-button {
+    float: right;
+}
+
+.persons-links {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.field {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: left;
+}
+
+.field.focus label {
+    color: #ffc7ca;
+}
+
+.field.focus input,
+.field.focus textarea {
+    border-bottom-color: #ffc7ca;
+}
+
+.field label {
+    font-size: 0.7em;
+    transition: color .1s;
+}
+
+.field input,
+.field textarea {
+    padding: 5px;
+    width: calc(100% - 10px);
+    display: block;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 1px solid white;
+    transition: border-bottom-color .1s;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #ffffff69;
+}
+
+@media only screen and (max-device-width: 768px) {
+    .app {
+        /* width: calc(100% - 40px); */
+    }
+
+    .couple-names {
+        word-spacing: 100vw;
+    }
+}
+
+.justify {
+    text-align: justify;
+}
+
+.quote {
+    display: block;
+    margin: 20px 0 0 0;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.note {
+    margin-top: 15px;
+    display: block;
+    font-size: 0.8em;
+    font-style: italic;
+    color: #f2db86;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #a27f7f;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: 0 0;
+    border-radius: 5px;
+}

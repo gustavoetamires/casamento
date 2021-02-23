@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#d1999c" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./plugins.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo & Tamires</title>
+</head>
+
+<body>
+    <div class="app" :class="{'loading': loading, 'show': initialized}">
+        <div class="container">
+            <div class="parents-names left">
+                <span class="parent-name">Cláudio Nogueira do Couto</span>
+                <span class="parent-name">Sueli C. dos Santos Couto</span>
+            </div>
+            <div class="parents-names right">
+                <span class="parent-name">Manoel Jerônimo da Silva</span>
+                <span class="parent-name">Cícera Maria da Silva</span>
+            </div>
+            <p class="couple-names">Gustavo & Tamires</p>
+            <span class="info">Convidam para seu casamento a realizar-se em</span>
+            <span class="info date"><span class="emphasis">14</span> de <span class="emphasis">Março</span> de <span
+                    class="emphasis">2021</span> - <span class="emphasis">16h</span>
+            </span>
+
+            <div class="section-divider"></div>
+            <div class="section">
+                <i class="section-icon far fa-heart"></i>
+                <span class="section-title">Nosso Casamento</span>
+                <span class="info justify">
+                    Olá! Você é nosso convidado nesta data tão importante. Agradecemos ao Senhor por estarmos nos unindo
+                    neste dia tão especial e viemos te convidar para celebrar conosco.
+                    <span class="quote">"E tudo o que fizerdes, seja em palavra, seja em ação, fazei-o em nome do Senhor
+                        Jesus, dando por ele graças a Deus Pai." Colossenses 3:17.</span>
+                    <span v-if="preventShare" class="note">Obs.: Se este link foi enviado especialmente para você,
+                        pedimos a
+                        gentileza de evitar o compartilhar com outras pessoas.</span>
+                </span>
+            </div>
+
+            <div class="section-divider"></div>
+            <div class="section">
+                <i class="section-icon fas fa-map-marker-alt"></i>
+                <span class="section-title">Local</span>
+                <span class="info">Salão Subai</span>
+                <div>
+                    <a class="act-link block-link" href="javascript:void(0)" :class="{'active': showCompleteAddress}"
+                        @click="showCompleteAddress = !showCompleteAddress">Ver o endereço completo <i
+                            class="far fa-eye"></i></a>
+                    <transition name="slide-fade">
+                        <div v-if="showCompleteAddress" class="block-link-info">
+                            Av. Maria Cândida Delgado, 390 - Vila Cândida, São José dos Campos - SP, 12213-513
+                        </div>
+                    </transition>
+                    <a class="act-link block-link" href="javascript:void(0)" :class="{'active': showMap}"
+                        @click="showMap = !showMap">Ver mapa <i class="fas fa-map-marked-alt"></i></a>
+                    <transition name="slide-fade">
+                        <div v-if="showMap" class="block-link-info">
+                            <iframe style="width: 100%; height: 400px; border-radius: 5px; border: none"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.936820807523!2d-45.90504178507857!3d-23.135984484895705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc48298e4b0a89%3A0x29ea8239b261cb73!2sSal%C3%A3o%20Dubai!5e0!3m2!1sen!2sbr!4v1614012988079!5m2!1sen!2sbr"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </transition>
+                    <a class="act-link block-link" target="_blank"
+                        href="https://www.google.com/maps/place/Sal%C3%A3o+Dubai+-+Av.+Maria+C%C3%A2ndida+Delgado,+390+-+Vila+C%C3%A2ndida,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12213-513/@-23.135984,-45.902853,16z/data=!4m2!3m1!1s0x94cc48298e4b0a89:0x29ea8239b261cb73?hl=en&gl=BR">
+                        Abrir no Google Maps <i class="fab fa-google"></i></a>
+                    <a class="act-link block-link" target="_blank"
+                        href="https://www.waze.com/live-map/directions/brasil/sao-paulo/av.-maria-candida-delgado,-390?navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_directions&to=place.ChIJYS5uwtZJzJQR0uyimpAIU-8">
+                        Abrir no Waze <i class="fab fa-waze"></i></a>
+                    <a class="act-link block-link" href="javascript:void(0)" :class="{'active': showMap}"
+                        @click="showInfos = !showInfos">Covid-19 <i class="fas fa-virus"></i></a>
+                    <transition name="slide-fade">
+                        <div v-if="showInfos" class="block-link-info justify">
+                            O culto e cerimônia ocorrerão no mesmo local. Devido o momento de pandemia que estamos
+                            passando,
+                            estaremos a seguir todos os procedimentos e normas estabelecidas para a realização do
+                            evento, portanto haverá o limite de pessoas respeitando a porcentagem legal imposta,
+                            distanciamento necessário entre os assentos e disponibilização de frascos de álcool 70
+                            INPM.<br /><br />
+                            O uso de máscaras será obrigatório, sendo permitida retirada apenas para alimentação no
+                            refeitório. Recomendamos que você compartilhe a mesma mesa no refeitório com pessoas que
+                            façam parte do seu convívio. A comida será servida em self-service e todos serão instruídos a
+                            passarem ácool nas mãos, usar luvas descartáveis, a evitar filas, aglomereações ou conversar
+                            enquanto estiverem se servindo.
+                        </div>
+                    </transition>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+            <div class="section">
+                <i class="section-icon fas fa-check"></i>
+                <span class="section-title">Confirmação de presença</span>
+                <span class="info justify">
+                    É importante pra nós sabermos se você irá, seu nome, seu e CPF assim como das pessoas que irão
+                    contigo
+                    também.
+                    As pessoas que você incluir aqui com você não precisarão realizar a inscrição.<br /><br />
+                    Para confirmar a presença, preencha os campos abaixo e clique em <strong>Confirmar</strong>.
+                    <div class="person-card">
+                        <span class="card-title">Meus dados</span>
+                        <div class="field" :class="{'focus': focusField == 'name'}">
+                            <label>Nome Completo</label>
+                            <input type="text" @focus="focusField = 'name'" @blur="focusField = ''"
+                                placeholder="Digite seu nome" v-model="persons[0].name" />
+                        </div>
+                        <div class="field" :class="{'focus': focusField == 'cpf'}">
+                            <label>CPF (apenas números)</label>
+                            <input type="number" @focus="focusField = 'cpf'" @blur="focusField = ''"
+                                placeholder="Digite seu CPF" v-model="persons[0].cpf" />
+                        </div>
+                    </div>
+                    <transition-group name="slide-fade">
+                        <div class="person-card" v-for="(person, i) in [...persons].slice(1)" v-bind:key="'person' + i">
+                            <span class="card-title">Dados da pessoa {{i + 1}}</span>
+                            <a class="act-link remove-person-button" href="javascript:void(0)"
+                                @click="persons.splice(i + 1, 1)">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                            <div class="field" :class="{'focus': focusField == 'name' + i}">
+                                <label>Nome Completo</label>
+                                <input type="text" @focus="focusField = 'name' + i" @blur="focusField = ''"
+                                    :placeholder="'Nome da pessoa ' + (i + 1)" v-model="person.name" />
+                            </div>
+                            <div class="field" :class="{'focus': focusField == 'cpf' + i}">
+                                <label>CPF (apenas números)</label>
+                                <input type="number" @focus="focusField = 'cpf' + i" @blur="focusField = ''"
+                                    :placeholder="'CPF da pessoa ' + (i + 1)" v-model="person.cpf" />
+                            </div>
+                        </div>
+                    </transition-group>
+                    <div class="persons-links">
+                        <a class="act-link block-link inline" href="javascript:void(0)" style="margin-right: 8px"
+                            @click="persons.push({})">
+                            <i class="fas fa-plus"></i> Incluir pessoa</a>
+                        <a class="act-link block-link inline" href="javascript:void(0)" @click="savePersons()">
+                            <i class="fas fa-check"></i> Confirmar</a>
+                    </div>
+                </span>
+            </div>
+
+            <div class="section-divider"></div>
+            <div class="section">
+                <i class="section-icon fab fa-youtube"></i>
+                <span class="section-title">Transmissão</span>
+                <span class="info justify">Caso as inscrições estejam encerradas ou você não possa comparecer nessa
+                    data,
+                    fique tranquilo, disponibilizaremos aqui um link que transmitirá ao vivo nosso
+                    casamento.</span>
+                <a class="act-link block-link" href="javascript:void(0)" @click="openTransmissionUrl()">
+                    Abrir link da transmissão <i class="fas fa-external-link-alt"></i></a>
+                <a class="act-link block-link" href="javascript:void(0)" @click="copyTransmissionUrl()">
+                    Copiar link de transmissão <i class="fas fa-link"></i></a>
+            </div>
+
+            <div class="section-divider"></div>
+            <div class="section">
+                <i class="section-icon fas fa-gift"></i>
+                <span class="section-title">Lista de Presentes</span>
+                <span class="info justify">Se você puder e desejar nos abençoar comprando um dos itens de nossa lista de
+                    presentes ou transferindo algum valor via Pix será de grande ajuda pra nós. Se assim fizer, faça
+                    aquilo
+                    que estiver a sua disposição e no seu coração.</span>
+                <a class="act-link block-link"
+                    href="https://www.querodecasamento.com.br/lista-de-casamento/tamires-gustavocouto" target="_blank">
+                    Abrir lista de presentes <i class="fas fa-external-link-alt"></i></a>
+                <a class="act-link block-link" href="javascript:void(0)" @click="copyPix()">
+                    Copiar chave Pix <i class="fas fa-key"></i></a>
+            </div>
+
+            <div class="section-divider"></div>
+            <div class="section">
+                <i class="section-icon far fa-comment-dots"></i>
+                <span class="section-title">Mensagens</span>
+                <span class="info justify">Já que está aqui, deixe uma mensagem bem bonita e carinnhosa pra nós,
+                    ficaremos muito felizes em saber que você passou por aqui.
+                    <div class="person-card">
+                        <div class="field" :class="{'focus': focusField == 'mensagemNome'}" style="margin-top: 0">
+                            <label>Nome</label>
+                            <input placeholder="Digite seu nome" @focus="focusField = 'mensagemNome'"
+                                v-model="message.name" @blur="focusField = ''" />
+                        </div>
+                        <div class="field" :class="{'focus': focusField == 'mensagem'}">
+                            <label>Mensagem</label>
+                            <textarea placeholder="Digite sua mensagem" rows="5" @focus="focusField = 'mensagem'"
+                                v-model="message.message" @blur="focusField = ''"></textarea>
+                        </div>
+                    </div>
+                    <div class="persons-links">
+                        <a class="act-link block-link inline" href="javascript:void(0)" @click="sendMessage()">
+                            Enviar <i class="far fa-paper-plane"></i></a>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="presentation" :class="{'show': !invitationOpened}">
+            <div class="presentation-text">
+                Olá, {{tag || 'Convidado'}}!
+                <a v-if="!loading" class="act-link block-link" href="javascript:void(0)" @click="openInvitation()">Abrir
+                    convite!</a>
+            </div>
+        </div>
+
+        <div class="alert" :class="{'show': alert.show, [alert.type]: true}">
+            <span style="display: block">{{alert.text}}</span>
+            <a v-if="!loading" class="act-link" href="javascript:void(0)" @click="dismissAlert()">Ok</a>
+            <div v-if="loading" style="padding-top: 4px">
+                <img src="./three-dots.svg" style="height: 10px" />
+            </div>
+        </div>
+
+        <div class="music" title="Mutar/Desmutar volume" @click="toggleSound()">
+            <i class="fas" :class="{'fa-volume-up': !musicMuted, 'fa-volume-mute': musicMuted}"></i>
+            <audio id="music" autoplay loop>
+                <source src="./music.mp3" />
+            </audio>
+        </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
