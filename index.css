@@ -115,7 +115,7 @@ body {
     margin: 4px 0 4px 0;
     text-decoration: none;
     color: #f2db86;
-    line-height: 15px;
+    line-height: 20px;
     width: auto;
     padding-bottom: 3px;
     border-bottom: 1px solid #f2db86;
@@ -252,7 +252,7 @@ body {
 .currdate {
     display: block;
     font-size: .8em;
-    margin: 20px 0 90px 0;
+    margin: 20px 0 100px 0;
     opacity: 0.5;
 }
 
