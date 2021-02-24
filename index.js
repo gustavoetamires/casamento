@@ -95,10 +95,6 @@
                 document.execCommand('copy');
                 document.body.removeChild(el);
             },
-            copyPix: function () {
-                this.copyToClipboard('878df95f-6e64-4677-b46c-2ab111ecaa17');
-                this.showInfoAlert('Chave Pix Copiada!');
-            },
             copyTransmissionUrl: function () {
                 if (this.transmissionUrl) {
                     this.copyToClipboard(this.transmissionUrl);

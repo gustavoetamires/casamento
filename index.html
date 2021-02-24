@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#d1999c">
     <meta name="apple-mobile-web-app-status-bar-style" content="#d1999c">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="./index.css">
@@ -85,16 +85,15 @@
                         <div v-if="showInfos" class="block-link-info justify">
                             O culto e cerimônia ocorrerão no mesmo local. Devido o momento de pandemia que estamos
                             passando,
-                            estaremos a seguir todos os procedimentos e normas estabelecidas para a realização do
+                            estaremos seguindo todos os procedimentos e normas estabelecidas para a realização do
                             evento, portanto haverá o limite de pessoas respeitando a porcentagem legal imposta,
-                            distanciamento necessário entre os assentos e disponibilização de frascos de álcool 70
-                            INPM.<br /><br />
-                            O uso de máscaras será obrigatório, sendo permitida retirada apenas para alimentação no
-                            refeitório. Recomendamos que você compartilhe a mesma mesa no refeitório com pessoas que
+                            distanciamento necessário entre os assentos e disponibilização de frascos de álcool
+                            70.<br /><br />
+                            O uso de máscaras será obrigatório, sendo permitida retirada apenas para alimentação.
+                            Recomendamos que você compartilhe a mesma mesa com pessoas que
                             façam parte do seu convívio. A comida será servida em self-service e todos serão instruídos
-                            a
-                            passarem álcool nas mãos, usar luvas descartáveis, a evitar filas, aglomereações ou conversar
-                            enquanto estiverem se servindo.
+                            a passarem álcool nas mãos, usar luvas descartáveis, a evitar filas, aglomereações ou
+                            conversar enquanto estiverem se servindo.
                         </div>
                     </transition>
                 </div>
@@ -105,11 +104,12 @@
                 <i class="section-icon fas fa-check"></i>
                 <span class="section-title">Confirmação de presença</span>
                 <span class="info justify">
-                    É importante pra nós sabermos se você irá, seu nome, seu e CPF assim como das pessoas que irão
+                    É importante pra nós sabermos se você irá. Precisaremos do seu nome e CPF, assim como o das pessoas que irão
                     contigo
                     também.
-                    As pessoas que você incluir aqui com você não precisarão realizar a inscrição.<br /><br />
-                    Para confirmar a presença, preencha os campos abaixo e clique em <strong>Confirmar</strong>.<br /><br />
+                    As pessoas que você incluir aqui não precisarão realizar a inscrição.<br /><br />
+                    Para confirmar a presença, preencha os campos abaixo e clique em
+                    <strong>Confirmar</strong>.<br /><br />
                     <div class="person-card">
                         <span class="card-title">Meus dados</span>
                         <div class="field" :class="{'focus': focusField == 'name'}">
@@ -171,14 +171,11 @@
                 <i class="section-icon fas fa-gift"></i>
                 <span class="section-title">Lista de Presentes</span>
                 <span class="info justify">Se você puder e desejar nos abençoar comprando um dos itens de nossa lista de
-                    presentes ou transferindo algum valor via Pix será de grande ajuda pra nós. Se assim fizer, faça
-                    aquilo
-                    que estiver a sua disposição e no seu coração.</span>
+                    presentes, será de grande ajuda pra nós. Se assim fizer, faça
+                    aquilo que estiver a sua disposição e no seu coração.</span>
                 <a class="act-link block-link"
                     href="https://www.querodecasamento.com.br/lista-de-casamento/tamires-gustavocouto" target="_blank">
                     Abrir lista de presentes <i class="fas fa-external-link-alt"></i></a>
-                <a class="act-link block-link" href="javascript:void(0)" @click="copyPix()">
-                    Copiar chave Pix <i class="fas fa-key"></i></a>
             </div>
 
             <div class="section-divider"></div>
