@@ -15,7 +15,6 @@
             invitationOpened: false,
             showCompleteAddress: false,
             showMap: false,
-            showPix: false,
             showInfos: false,
             focusField: '',
             preventShare: window.location.href.toLowerCase().indexOf('prevent-share') != -1,
@@ -65,7 +64,6 @@
         methods: {
             openInvitation: function() {
                 this.invitationOpened = true;
-                this.music.volume = 0.6;
                 this.music.play();
             },
             setAlert: function (text, type, show) {
