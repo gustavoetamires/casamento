@@ -224,7 +224,7 @@
 
         <div class="music" title="Mutar/Desmutar volume" @click="toggleSound()">
             <i class="fas" :class="{'fa-volume-up': !musicMuted, 'fa-volume-mute': musicMuted}"></i>
-            <audio id="music" autoplay loop>
+            <audio id="music" loop>
                 <source src="./music.mp3" />
             </audio>
         </div>
