@@ -50,8 +50,8 @@
                 </span>
             </div>
 
-            <div class="section-divider"></div>
-            <div class="section">
+            <div class="section-divider" v-if="!preventSubscribe"></div>
+            <div class="section" v-if="!preventSubscribe">
                 <i class="section-icon fas fa-map-marker-alt"></i>
                 <span class="section-title">Local</span>
                 <span class="info">Salão Subai</span>
@@ -91,23 +91,24 @@
                             70.<br /><br />
                             O uso de máscaras será obrigatório, sendo permitida retirada apenas para alimentação.
                             Recomendamos que você compartilhe a mesma mesa com pessoas que
-                            façam parte do seu convívio. A comida será servida em self-service e todos serão instruídos
-                            a passarem álcool nas mãos, usar luvas descartáveis, a evitar filas, aglomereações ou
-                            conversar enquanto estiverem se servindo.
+                            façam parte do seu convívio. Garçons usarão luvas e máscaras e servirão pratos de salgados
+                            embalados e fechados em cada mesa durante o período de festa, podendo ser abertos quando ja
+                            estiverem em cima da mesa. Bebidas, bolos e doces também serão servidos por garçons mesa a
+                            mesa a fim de evitar filas e aglomerações.
                         </div>
                     </transition>
                 </div>
             </div>
 
-            <div class="section-divider"></div>
-            <div class="section">
+            <div class="section-divider" v-if="!preventSubscribe"></div>
+            <div class="section" v-if="!preventSubscribe">
                 <i class="section-icon fas fa-check"></i>
                 <span class="section-title">Confirmação de presença</span>
                 <span class="info justify">
-                    É importante pra nós sabermos se você irá. Precisaremos do seu nome e CPF, assim como o das pessoas que irão
-                    contigo
-                    também.
-                    As pessoas que você incluir aqui não precisarão realizar a inscrição.<br /><br />
+                    É importante pra nós sabermos se você irá. Precisaremos do seu nome e CPF, assim como o das pessoas
+                    que irão contigo também.
+                    As pessoas que você incluir junto a sua confirmação não precisarão realizar nova confoirmação e
+                    terão a preferência para compartilhar a mesma mesa no salão de festas.<br /><br />
                     Para confirmar a presença, preencha os campos abaixo e clique em
                     <strong>Confirmar</strong>.<br /><br />
                     <div class="person-card">
@@ -156,10 +157,13 @@
             <div class="section">
                 <i class="section-icon fab fa-youtube"></i>
                 <span class="section-title">Transmissão</span>
-                <span class="info justify">Caso as inscrições estejam encerradas ou você não possa comparecer nessa
-                    data,
-                    fique tranquilo, disponibilizaremos aqui um link que transmitirá ao vivo nosso
+                <span class="info justify" v-if="!preventSubscribe">Caso as inscrições estejam encerradas ou você não
+                    possa comparecer nessa
+                    data, fique tranquilo, o link a ser disponibilizado abaixo transmitirá ao vivo nosso
                     casamento.</span>
+                <span  v-if="preventSubscribe">
+                    Você pode acompanhar a transmissão ao vivo do nosso casamento pelo link a ser disponibilizado abaixo:
+                </span>
                 <a class="act-link block-link" href="javascript:void(0)" @click="openTransmissionUrl()">
                     Abrir link da transmissão <i class="fas fa-external-link-alt"></i></a>
                 <a class="act-link block-link" href="javascript:void(0)" @click="copyTransmissionUrl()">
@@ -203,7 +207,7 @@
                 </span>
             </div>
 
-            <div class="currdate">Atualizado em {{currDate.toLocaleString()}}</div>
+            <div class="currdate">Acessado em {{currDate.toLocaleString()}}</div>
 
             <div class="alert" :class="{'show': alert.show, [alert.type]: true}">
                 <span style="display: block">{{alert.text}}</span>

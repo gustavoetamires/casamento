@@ -18,6 +18,7 @@
             showInfos: false,
             focusField: '',
             preventShare: window.location.href.toLowerCase().indexOf('prevent-share') != -1,
+            preventSubscribe: window.location.href.toLowerCase().indexOf('prevent-subscribe') != -1,
             tag: url.searchParams.get('tag'),
             persons: [{
                 name: '',
