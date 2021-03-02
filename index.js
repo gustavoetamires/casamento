@@ -19,6 +19,7 @@
             showInfos: false,
             focusField: '',
             subscribeMode: window.location.href.toLowerCase().indexOf('subscribe-mode=true') != -1,
+            preventShare: window.location.href.toLowerCase().indexOf('prevent-share=true') != -1,
             limitExceeded: true,
             tag: url.searchParams.get('tag'),
             persons: [{
