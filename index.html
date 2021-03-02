@@ -100,11 +100,11 @@
                 </div>
             </div>
 
-            <div class="section-divider"></div>
-            <div class="section">
+            <div class="section-divider" v-if="subscribeMode && !limitExceeded"></div>
+            <div class="section" v-if="subscribeMode && !limitExceeded">
                 <i class="section-icon fas fa-check"></i>
                 <span class="section-title">Confirmação de presença</span>
-                <span class="info justify" v-if="subscribeMode && !limitExceeded">
+                <span class="info justify">
                     É importante pra nós sabermos se você irá. Precisaremos do seu nome e CPF, assim como o das pessoas
                     que irão contigo também.
                     As pessoas que você incluir junto a sua confirmação não precisarão realizar uma nova e
@@ -159,21 +159,20 @@
                             <i class="fas fa-check"></i> Confirmar</a>
                     </div>
                 </span>
-                <span class="info justify" v-else>
-                    Infelizmente nossas inscrições presenciais já se encerraram, mas você ainda pode verificar informações a respeito da transmissão ao vivo na seção abaixo!
-                </span>
             </div>
 
             <div class="section-divider"></div>
             <div class="section">
                 <i class="section-icon fab fa-youtube"></i>
                 <span class="section-title">Transmissão</span>
-                <span class="info justify" v-if="subscribeMode && !limitExceeded">Caso as inscrições estejam encerradas ou você não
+                <span class="info justify" v-if="subscribeMode && !limitExceeded">Caso as inscrições estejam encerradas
+                    ou você não
                     possa comparecer nessa
                     data, fique tranquilo, o link a ser disponibilizado abaixo transmitirá ao vivo nosso
                     casamento.</span>
                 <span v-else>
-                    Você pode acompanhar a transmissão ao vivo do nosso casamento pelo link a ser disponibilizado abaixo:
+                    Você pode acompanhar a transmissão ao vivo do nosso casamento pelo link a ser disponibilizado
+                    abaixo:
                 </span>
                 <a class="act-link block-link" href="javascript:void(0)" @click="openTransmissionUrl()">
                     Abrir link da transmissão <i class="fas fa-external-link-alt"></i></a>
@@ -186,11 +185,13 @@
                 <i class="section-icon fas fa-gift"></i>
                 <span class="section-title">Lista de Presentes</span>
                 <span class="info justify">Se você puder e desejar nos abençoar comprando um dos itens de nossa lista de
-                    presentes, será de grande ajuda pra nós. Se assim fizer, faça
-                    aquilo que estiver a sua disposição e no seu coração.</span>
+                    presentes ou nos enviando um valor via PIX, será de grande ajuda pra nós. Se assim
+                    fizer, faça aquilo que estiver a sua disposição e no seu coração.</span>
                 <a class="act-link block-link"
                     href="https://www.querodecasamento.com.br/lista-de-casamento/tamires-gustavocouto" target="_blank">
                     Abrir lista de presentes <i class="fas fa-external-link-alt"></i></a>
+                <a class="act-link block-link" href="javascript:void(0)" @click="copyPix()">
+                    Copiar chave PIX <i class="fas fa-key"></i></a>
             </div>
 
             <div class="section-divider"></div>

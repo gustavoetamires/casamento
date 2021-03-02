@@ -112,6 +112,10 @@
                     this.showDangerAlert('Link de Transmissão indisponível');
                 }
             },
+            copyPix: function () {
+                this.copyToClipboard('878df95f-6e64-4677-b46c-2ab111ecaa17');
+                this.showInfoAlert('Chave Pix Copiada!');
+            },
             openTransmissionUrl: function () {
                 if (this.transmissionUrl) {
                     window.open(this.transmissionUrl, '_blank');
