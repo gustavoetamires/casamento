@@ -100,11 +100,11 @@
                 </div>
             </div>
 
-            <div class="section-divider" v-if="subscribeMode && !limitExceeded"></div>
-            <div class="section" v-if="subscribeMode && !limitExceeded">
+            <div class="section-divider"></div>
+            <div class="section">
                 <i class="section-icon fas fa-check"></i>
                 <span class="section-title">Confirmação de presença</span>
-                <span class="info justify">
+                <span class="info justify" v-if="subscribeMode && !limitExceeded">
                     É importante pra nós sabermos se você irá. Precisaremos do seu nome e CPF, assim como o das pessoas
                     que irão contigo também.
                     As pessoas que você incluir junto a sua confirmação não precisarão realizar nova confoirmação e
@@ -155,6 +155,9 @@
                         <a class="act-link block-link inline" href="javascript:void(0)" @click="savePersons()">
                             <i class="fas fa-check"></i> Confirmar</a>
                     </div>
+                </span>
+                <span class="info justify" v-else>
+                    Infelizmente nossas inscrições presenciais já se encerraram, mas você ainda pode verificar informações a respeito da transmissão ao vivo na seção abaixo!
                 </span>
             </div>
 
