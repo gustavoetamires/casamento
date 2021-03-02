@@ -111,6 +111,9 @@
                     terão a preferência para compartilhar a mesma mesa no salão de festas.<br /><br />
                     Para confirmar a presença, preencha os campos abaixo e clique em
                     <strong>Confirmar</strong>.<br /><br />
+                    <span v-if="confirmUntil" class="note" style="padding-bottom: 15px; text-align: center;">
+                        Obs.: Você deve confirmar sua presença até <strong>{{confirmUntil}}</strong>.
+                    </span>
                     <div class="person-card">
                         <span class="card-title">Meus dados</span>
                         <div class="field" :class="{'focus': focusField == 'name'}">

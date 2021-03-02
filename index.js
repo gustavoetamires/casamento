@@ -22,6 +22,7 @@
             preventShare: window.location.href.toLowerCase().indexOf('prevent-share=true') != -1,
             limitExceeded: true,
             tag: url.searchParams.get('tag'),
+            confirmUntil: url.searchParams.get('confirm-until'),
             persons: [{
                 name: '',
                 cpf: ''
