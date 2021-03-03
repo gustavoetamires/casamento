@@ -16,6 +16,7 @@
             invitationOpened: false,
             showCompleteAddress: false,
             showMap: false,
+            photo: '',
             showInfos: false,
             focusField: '',
             subscribeMode: window.location.href.toLowerCase().indexOf('subscribe-mode=true') != -1,

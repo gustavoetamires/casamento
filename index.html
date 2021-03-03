@@ -42,6 +42,23 @@
                 <span class="info justify">
                     Olá! Você é nosso convidado nesta data tão importante. Agradecemos ao Senhor por estarmos nos unindo
                     neste dia tão especial e viemos te convidar para celebrar conosco.
+                    <div class="photo-gallery">
+                        <div class="photo" style="background-image: url('./photos/1.jpg')" @click="photo = '1'"></div>
+                        <div class="photo" style="background-image: url('./photos/2.jpg')" @click="photo = '2'"></div>
+                        <div class="photo" style="background-image: url('./photos/3.jpg')" @click="photo = '3'"></div>
+                        <div class="photo" style="background-image: url('./photos/4.jpg')" @click="photo = '4'"></div>
+                        <div class="photo" style="background-image: url('./photos/5.jpg')" @click="photo = '5'"></div>
+                    </div>
+                    <transition name="slide-fade">
+                        <div class="photo-fullscreen" v-if="photo">
+                            <div class="photo" :style="{'background-image': 'url(./photos/' + photo + '.jpg)'}"></div>
+                            <div class="close-photo-container">
+                                <div class="close-photo" @click="photo = ''">
+                                    <i class="far fa-times-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </transition>
                     <span class="quote">"E tudo o que fizerdes, seja em palavra, seja em ação, fazei-o em nome do Senhor
                         Jesus, dando por ele graças a Deus Pai." Colossenses 3:17.</span>
                     <span v-if="preventShare" class="note">Obs.: Se este link foi enviado especialmente para você,
