@@ -117,6 +117,10 @@
                 this.copyToClipboard('878df95f-6e64-4677-b46c-2ab111ecaa17');
                 this.showInfoAlert('Chave Pix Copiada!');
             },
+            copyPixCpf: function () {
+                this.copyToClipboard('41535975890');
+                this.showInfoAlert('Chave Pix Copiada!');
+            },
             openTransmissionUrl: function () {
                 if (this.transmissionUrl) {
                     window.open(this.transmissionUrl, '_blank');
